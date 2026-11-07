@@ -1,0 +1,10 @@
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\diode.lib", offset=19469, size=330
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\diode.lib", offset=521884, size=187
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\pwrmos.lib", offset=57483, size=335
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\ebipolar.lib", offset=11296, size=387
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\ebipolar.lib", offset=6715, size=386
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\opamp.lib", offset=63656, size=1063
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\opamp.lib", offset=103669, size=1155
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\opamp.lib", offset=119496, size=463
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\anl_misc.lib", offset=8165, size=2736
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\opamp.lib", offset=114293, size=886

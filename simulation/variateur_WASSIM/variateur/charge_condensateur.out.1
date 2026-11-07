@@ -1,0 +1,1270 @@
+
+**** 05/09/26 11:58:20 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Sat May 09 11:57:06 2026
+
+
+
+** Analysis setup **
+.tran 0ms 5ms 0 5us
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "charge_condensateur.net"
+
+
+
+**** INCLUDING charge_condensateur.net ****
+* Schematics Netlist *
+
+
+
+R_R2         0 $N_0001  15k  
+R_R1         $N_0001 +12V  4.7k  
+X_U5         0 $N_0003 $N_0002 LM317
+C_C5         -12V 0  10u IC=0 
+C_C4         -12V $N_0002  100n IC=0 
+R_R14         -12V $N_0004  1k  
+R_R15         $N_0002 $N_0003  220  
+R_R13         $N_0004 $N_0003  470  
+R_R3         +12V $N_0005   20k  
+R_R4         $N_0005 $N_0006  500  
+X_U1         $N_0001 $N_0006 +12V -12V $N_0007 uA741
+Q_Q1         $N_0010 $N_0007 $N_0006 BC557A 
+C_C1         $N_0002 $N_0010  1n IC=0 
+R_R40         0 $N_0011  10k  
+C_C6         -6V $N_0012  10n IC=0 
+R_R29         $N_0011 +12V  10k  
+C_C7         -6V +12V  10u IC=0 
+R_R21         -6V +12V  10k  
+Q_Q4         +12V $N_0011 +12V BC557A 
+Q_Q9         0 $N_0013 $N_0014 BC547A 
+R_R56         0 $N_0013  10k  
+C_C13         +12V 0  100n IC=0 
+R_R54         0 $N_0015  2k  
+R_R53         $N_0015 $N_0016  5.5k  
+R_R52         $N_0016 +12V  6.8k  
+D_D12         0 $N_0017 D1N4148 
+R_R55         $N_0014 +12V  10k  
+X_U16A         $N_0015 $N_0017 +12V 0 $N_0014 LM393
+R_R59         $N_0018 0  10k  
+M_M2         $N_0019 $N_0018 0 0 IRF530
+D_D13         $N_0019 V+ MUR820 
+R_R60         $N_0019 V+  1k  
+R_R58         $N_0018 $N_0020  10  
+R_R62         $N_0017 $N_0010  10k  
+R_R20         $N_0010 $N_0021  20k  
+X_U6         -6V $N_0010 $N_0002 +12V $N_0012 $N_0010 $N_0021 +12V 555C
+R_R22         -6V $N_0002  100k  
+V_V19         V+ 0 20V
+V_V1         +12V 0 12V
+V_V2         -12V 0 -12V
+V_V5         -6V 0 -6V
+Q_Q10         0 $N_0014 $N_0020 BC557A 
+Q_Q11         +12V $N_0014 $N_0020 BC547A 
+
+**** RESUMING charge_condensateur.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 05/09/26 11:58:20 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4148         MUR820          X_U5.DMOD       X_U1.dx         
+          IS    2.682000E-09    1.026000E-12   30.000000E-15  800.000000E-18 
+           N    1.836                           1.701                        
+         ISR    1.565000E-09   10.290000E-09                                 
+         IKF     .04417          .01771                                      
+          BV  100                                                            
+         IBV  100.000000E-06                                                 
+          RS     .5664           .03634                         1            
+          TT   11.540000E-09  123.300000E-09                                 
+         CJO    4.000000E-12  367.000000E-12                                 
+          VJ     .5              .75                                         
+           M     .3333           .4068                                       
+         XTI                   10                                            
+
+
+               X_U1.dy         X_U6.DIODE      
+          IS  800.000000E-18   10.000000E-15 
+          RS    1.000000E-03     .01         
+         CJO   10.000000E-12                 
+
+
+               X_U16A.x_lm393.dx 
+          IS  800.000000E-18 
+          RS    1            
+
+
+**** 05/09/26 11:58:20 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               BC557A          BC547A          X_U5.QPASSMOD   X_U1.qx         
+               PNP             NPN             NPN             NPN             
+          IS    1.020000E-15    7.049000E-15   30.000000E-15  800.000000E-18 
+          BF  174.7           253              50              93.75         
+          NF    1               1               1.701           1            
+         VAF   73.79          127.9             1.5                          
+         IKF     .1023           .07705                                      
+         ISE   10.730000E-15   96.260000E-15                                 
+          NE    1.644           1.556                                        
+          BR    4.432           1               1               1            
+          NR    1               1               1               1            
+         IKR    2.237           3.321                                        
+         ISC   14.740000E-15  130.800000E-15                                 
+          NC    1.296           1.602                                        
+          NK     .5033           .5305                                       
+          RC    1.039            .8766                                       
+         CJE   30.000000E-12   11.500000E-12                                 
+         VJE     .5              .5                                          
+         MJE     .3333           .6715                                       
+         CJC    9.810000E-12    5.250000E-12                                 
+         VJC     .4865           .5697                                       
+         MJC     .332            .3147                                       
+          TF  830.300000E-12  409.500000E-12                                 
+         XTF   10.32           40.12                                         
+         VTF   10              10                                            
+         ITF     .8981          1.994                                        
+          TR   10.000000E-09   10.000000E-09                                 
+         XTB    1.5             1.5                                          
+          CN    2.2             2.42            2.42            2.42         
+           D     .52             .87             .87             .87         
+
+
+               X_U16A.x_lm393.qin 
+               PNP             
+          IS  800.000000E-18 
+          BF    2.000000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+          CN    2.2          
+           D     .52         
+
+
+               X_U16A.x_lm393.qmi 
+               NPN             
+          IS  800.000000E-18 
+          BF    1.002000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+          CN    2.42         
+           D     .87         
+
+
+               X_U16A.x_lm393.qmo 
+               NPN             
+          IS  800.000000E-18 
+          BF    1.000000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         CJC    1.000000E-15 
+          TR  475.400000E-09 
+          CN    2.42         
+           D     .87         
+
+
+               X_U16A.x_lm393.qoc 
+               NPN             
+          IS  800.000000E-18 
+          BF   20.690000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         CJC    1.000000E-15 
+          TF    3.540000E-09 
+          TR  472.800000E-09 
+          CN    2.42         
+           D     .87         
+
+
+**** 05/09/26 11:58:20 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U5.JADJMOD    X_U6.JNEMOD     
+               NJF             NJF             
+         VTO   -1              -2.5          
+        BETA   50.000000E-06    5.120000E-06 
+
+
+**** 05/09/26 11:58:20 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IRF530          X_U6.PCHAN555   X_U6.NCHAN555   
+               NMOS            PMOS            NMOS            
+       LEVEL    3               1               1            
+           L    2.000000E-06  100.000000E-06  100.000000E-06 
+           W     .68          100.000000E-06  100.000000E-06 
+         VTO    3.191           -.2              .2          
+          KP   20.730000E-06   20.000000E-06   20.000000E-06 
+       GAMMA    0               0               0            
+         PHI     .6              .6              .6          
+      LAMBDA    0               0               0            
+          RD     .03869                                      
+          RS     .05853                                      
+          RG    4.63                                         
+         RDS  444.400000E+03                                 
+          IS    1.861000E-12   10.000000E-15   10.000000E-15 
+          JS    0               0               0            
+          PB     .8              .8              .8          
+        PBSW     .8              .8              .8          
+         CBD    1.151000E-09                                 
+          CJ    0               0               0            
+        CJSW    0               0               0            
+          TT  125.000000E-09                                 
+        CGSO  876.700000E-12    1.000000E-12    1.000000E-12 
+        CGDO  261.400000E-12    1.000000E-12    1.000000E-12 
+        CGBO    0               1.000000E-12    1.000000E-12 
+         TOX  100.000000E-09    0               0            
+          XJ    0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03 
+       DELTA    0                                            
+         ETA    0                                            
+      DIOMOD    1               1               1            
+         VFB    0               0               0            
+        LETA    0               0               0            
+        WETA    0               0               0            
+          U0    0               0               0            
+        TEMP    0               0               0            
+         VDD    0               0               0            
+       XPART    0               0               0            
+
+
+               X_U6.PCHAN555_OUT 
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    -.2          
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD  200.000000E-12 
+          CJ    0            
+        CJSW    0            
+        CGSO    1.000000E-12 
+        CGDO    1.000000E-12 
+        CGBO    1.000000E-12 
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    0            
+       XPART    0            
+
+
+**** 05/09/26 11:58:20 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V+)   20.0000  (  -6V)   -6.0000  ( +12V)   12.0000  ( -12V)  -12.0000      
+
+(X_U1.6)-799.1E-06 (X_U1.7)    8.4782 (X_U1.8)    8.4782 (X_U1.9)    0.0000     
+
+(X_U5.4)   -6.4226 (X_U5.5)   -5.6899 (X_U5.6)   -4.1976 (X_U5.7)    2.7293     
+
+(X_U5.8)   -5.6286 (X_U5.9)   54.2990 (X_U6.1)   -6.0000 (X_U6.2)   -6.0000     
+
+(X_U6.3) 10.35E+03 (X_U6.4)   11.2000 (X_U6.5)   11.0560 (X_U6.6)-10.37E+03     
+
+(X_U6.7)   11.2000 (X_U6.8)   -6.6560 (X_U6.9)   -6.0000 ($N_0001)    9.1368    
+
+($N_0002)   -7.0359                   ($N_0003)   -7.6726                       
+
+($N_0004)   -9.0562                   ($N_0005)    9.2063                       
+
+($N_0006)    9.1365                   ($N_0007)    8.4783                       
+
+($N_0010)   -7.0359                   ($N_0011)   11.2480                       
+
+($N_0012)   -6.0000                   ($N_0013) 1.435E-09                       
+
+($N_0014)   11.9400                   ($N_0015)    1.6783                       
+
+($N_0016)    6.2937                   ($N_0017)    -.5836                       
+
+($N_0018)   11.2610                   ($N_0019)     .0023                       
+
+($N_0020)   11.2720                   ($N_0021)   -6.2866                       
+
+(X_U1.10)    8.5271                   (X_U1.11)   11.9590                       
+
+(X_U1.12)   11.9580                   (X_U1.13)    8.5416                       
+
+(X_U1.14)    8.5417                   (X_U1.53)   11.0000                       
+
+(X_U1.54)  -11.0000                   (X_U1.90)-714.2E-06                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    0.0000                   (X_U5.10)   -5.6885                       
+
+(X_U5.11)   -5.6525                   (X_U5.12)   -4.1042                       
+
+(X_U5.13)   -1.4054                   (X_U5.15)   -5.6899                       
+
+(X_U6.10)   12.0000                   (X_U6.11)   12.0000                       
+
+(X_U6.12)   12.0000                   (X_U6.13)   -6.0000                       
+
+(X_U6.14)   -6.0000                   (X_U6.15)   12.0000                       
+
+(X_U6.16)   12.0000                   (X_U6.17)   12.0000                       
+
+(X_U6.18)   -6.0000                   (X_U6.19)   -6.0000                       
+
+(X_U6.20)   12.0000                   (X_U6.21)   -5.8560                       
+
+(X_U6.22)    3.0000                   (X_U6.23)   11.8560                       
+
+(X_U6.24)   -6.0000                   (X_U6.25)   -6.0000                       
+
+(X_U6.VDD)   12.0000                  (X_U16A.x_lm393.7)     .8273              
+
+(X_U16A.x_lm393.8)     .6503          (X_U16A.x_lm393.9)     .0179              
+
+(X_U16A.x_lm393.10)     .0179         (X_U16A.x_lm393.11)     .0179             
+
+(X_U16A.x_lm393.21)    2.4283         (X_U16A.x_lm393.22)     .1664         
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V19       -2.000E-02
+    V_V1        -1.500E+04
+    V_V2         8.482E+03
+    V_V5         6.520E+03
+    X_U5.VREF   -6.134E-09
+    X_U1.vb     -7.991E-09
+    X_U1.vc      2.523E-12
+    X_U1.ve      1.939E-11
+    X_U1.vlim   -7.142E-07
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.000E-11
+    X_U6.V_U6_V2   1.707E-11
+    X_U6.V_U7_V2  -1.036E-03
+    X_U16A.x_lm393.vi1  -2.412E-12
+    X_U16A.x_lm393.vi2   1.569E-07
+    X_U16A.x_lm393.v1  -1.192E-11
+
+    TOTAL POWER DISSIPATION   3.21E+05  WATTS
+
+
+**** 05/09/26 11:58:20 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1.ga     X_U1.gcm  
+I-SOURCE     5.882E-08   5.083E-08
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U5.ESC    X_U5.EFB    X_U5.EB     X_U5.EP     X_U1.egnd 
+V-SOURCE     1.383E+00   2.932E+00   9.765E+00   6.134E+01   0.000E+00
+I-SOURCE     6.915E+00  -1.198E-13  -6.927E+00  -5.993E-01   1.361E-06
+
+NAME         X_U6.E_EMIR             X_U6.E_EVAL           
+V-SOURCE     1.800E+01               4.047E-10            
+I-SOURCE    -5.545E-01               0.000E+00            
+
+NAME         X_U6.E_U6_E1CMP         X_U6.E_U6_E1          
+V-SOURCE     1.036E+04               1.720E+01            
+I-SOURCE    -1.034E-03               1.032E-03            
+
+NAME         X_U6.E_U7_E1CMP         X_U6.E_U7_E1          
+V-SOURCE    -1.036E+04               1.720E+01            
+I-SOURCE     1.036E-03              -1.707E-11            
+
+NAME         X_U16A.x_lm393.e1     
+V-SOURCE     1.793E-02            
+I-SOURCE     1.192E-11            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1.fb     X_U16A.x_lm393.f1     
+I-SOURCE    -8.475E-02  -1.192E-11            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1.hlim 
+V-SOURCE    -7.142E-04
+I-SOURCE     1.429E-15
+
+
+**** DIODES
+
+
+NAME         D_D12       D_D13       X_U5.DBK    X_U5.DSC    X_U5.DFB  
+MODEL        D1N4148     MUR820      X_U5.DMOD   X_U5.DMOD   X_U5.DMOD 
+ID           6.45E-04   -3.97E-08    2.24E+00    6.92E+00   -1.20E-13 
+VD           5.84E-01   -2.00E+01    1.41E+00    1.46E+00   -9.33E-02 
+REQ          7.34E+01    1.71E+09    1.96E-02    6.36E-03    9.24E+11 
+CAP          1.64E-10    9.51E-11    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U5.DPU    X_U1.dc     X_U1.de     X_U1.dlp    X_U1.dln  
+MODEL        X_U5.DMOD   X_U1.dy     X_U1.dy     X_U1.dx     X_U1.dx   
+ID           5.99E-01   -2.52E-12   -1.95E-11   -4.00E-11   -4.00E-11 
+VD           1.35E+00   -2.52E+00   -1.95E+01   -4.00E+01   -4.00E+01 
+REQ          7.34E-02    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          0.00E+00    5.33E-12    2.21E-12    0.00E+00    0.00E+00 
+
+NAME         X_U1.dp     X_U6.D_U6_D2CLMP        X_U6.D_U6_D1CLMP      
+MODEL        X_U1.dx     X_U6.DIODE              X_U6.DIODE            
+ID          -2.40E-11    1.03E-03               -1.71E-11             
+VD          -2.40E+01    6.56E-01               -1.71E+01             
+REQ          1.00E+12    2.51E+01                1.00E+12             
+CAP          0.00E+00    0.00E+00                0.00E+00             
+
+NAME         X_U6.D_U7_D2CLMP        X_U6.D_U7_D1CLMP      
+MODEL        X_U6.DIODE              X_U6.DIODE            
+ID          -1.71E-11                1.04E-03             
+VD          -1.71E+01                6.56E-01             
+REQ          1.00E+12                2.50E+01             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_U16A.x_lm393.dp     
+MODEL        X_U16A.x_lm393.dx     
+ID          -1.20E-11             
+VD          -1.20E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q1        Q_Q4        Q_Q9        Q_Q10       Q_Q11     
+MODEL        BC557A      BC557A      BC547A      BC557A      BC547A    
+IB          -7.14E-07   -1.05E-03   -1.43E-13    2.72E-12    6.03E-06 
+IC          -1.39E-04    8.81E-04   -1.19E-11   -1.58E-11    1.12E-03 
+VBE         -6.58E-01   -7.52E-01   -1.19E+01    6.67E-01    6.67E-01 
+VBC          1.55E+01   -7.52E-01    1.43E-09    1.19E+01   -6.03E-02 
+VCE         -1.62E+01    0.00E+00   -1.19E+01   -1.13E+01    7.28E-01 
+BETADC       1.94E+02   -8.39E-01    8.33E+01   -5.80E+00    1.86E+02 
+GM           5.36E-03    5.32E-03   -1.79E-13   -1.53E-13    4.26E-02 
+RPI          3.74E+04    1.03E+03    2.53E+14    1.75E+14    4.72E+03 
+RX           0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+RO           6.43E+05    6.51E+00    8.48E+11    7.61E+11    1.14E+05 
+CBE          6.28E-11    1.90E-10    1.33E-12    2.26E-11    5.63E-11 
+CBC          3.08E-12    1.64E-09    5.25E-12    3.35E-12    5.09E-12 
+CJS          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+BETAAC       2.00E+02    5.47E+00   -4.53E+01   -2.67E+01    2.01E+02 
+CBX/CBX2     0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+FT/FT2       1.30E+07    4.62E+05   -4.33E-03   -9.37E-04    1.11E+08 
+
+
+
+NAME         X_U5.QPASS              X_U1.q1     X_U1.q2   
+MODEL        X_U5.QPASSMOD           X_U1.qx     X_U1.qx   
+IB           1.16E-02                8.31E-08    8.37E-08 
+IC           2.24E+00                7.79E-06    7.85E-06 
+VBE          1.35E+00                5.95E-01    5.95E-01 
+VBC         -4.28E+00               -2.82E+00   -2.82E+00 
+VCE          5.63E+00                3.42E+00    3.42E+00 
+BETADC       1.93E+02                9.38E+01    9.38E+01 
+GM           5.06E+01                3.01E-04    3.03E-04 
+RPI          3.78E+00                3.11E+05    3.09E+05 
+RX           0.00E+00                0.00E+00    0.00E+00 
+RO           2.58E+00                1.00E+12    1.00E+12 
+CBE          0.00E+00                0.00E+00    0.00E+00 
+CBC          0.00E+00                0.00E+00    0.00E+00 
+CJS          0.00E+00                0.00E+00    0.00E+00 
+BETAAC       1.91E+02                9.38E+01    9.38E+01 
+CBX/CBX2     0.00E+00                0.00E+00    0.00E+00 
+FT/FT2       8.05E+20                4.79E+15    4.83E+15 
+
+
+
+NAME         X_U16A.x_lm393.q1       X_U16A.x_lm393.q2     
+MODEL        X_U16A.x_lm393.qin      X_U16A.x_lm393.qin    
+IB           2.41E-12               -1.57E-07             
+IC          -3.22E-12               -9.98E-05             
+VBE          1.60E+00               -6.61E-01             
+VBC          2.41E+00               -4.84E-01             
+VCE         -8.09E-01               -1.77E-01             
+BETADC      -1.34E+00                6.36E+02             
+GM           0.00E+00                3.86E-03             
+RPI          2.00E+15                5.17E+05             
+RX           0.00E+00                0.00E+00             
+RO           1.00E+12                2.42E+05             
+CBE          0.00E+00                0.00E+00             
+CBC          0.00E+00                0.00E+00             
+CJS          0.00E+00                0.00E+00             
+BETAAC       0.00E+00                2.00E+03             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2       0.00E+00                6.15E+16             
+
+
+
+NAME         X_U16A.x_lm393.q3       X_U16A.x_lm393.q4     
+MODEL        X_U16A.x_lm393.qmo      X_U16A.x_lm393.qmi    
+IB           3.33E-05                6.63E-08             
+IC           2.71E-11                6.65E-05             
+VBE          6.50E-01                6.50E-01             
+VBC          6.32E-01                0.00E+00             
+VCE          1.79E-02                6.50E-01             
+BETADC       8.14E-07                1.00E+03             
+GM           1.29E-03                2.57E-03             
+RPI          3.89E+05                3.90E+05             
+RX           0.00E+00                0.00E+00             
+RO           7.78E+02                9.70E+11             
+CBE          0.00E+00                0.00E+00             
+CBC          6.11E-10                0.00E+00             
+CJS          0.00E+00                0.00E+00             
+BETAAC       5.00E+02                1.00E+03             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2       3.35E+05                4.09E+16             
+
+
+
+NAME         X_U16A.x_lm393.q5     
+MODEL        X_U16A.x_lm393.qoc    
+IB          -1.19E-11             
+IC           2.39E-11             
+VBE          1.79E-02             
+VBC         -1.19E+01             
+VCE          1.19E+01             
+BETADC      -2.00E+00             
+GM           6.19E-14             
+RPI          1.95E+16             
+RX           0.00E+00             
+RO           1.00E+12             
+CBE          3.76E-21             
+CBC          3.94E-16             
+CJS          0.00E+00             
+BETAAC       1.21E+03             
+CBX/CBX2     0.00E+00             
+FT/FT2       2.50E+01             
+
+
+
+
+**** JFETS
+
+
+NAME         X_U5.JADJ               X_U6.J_J1             
+MODEL        X_U5.JADJMOD            X_U6.JNEMOD           
+ID           5.00E-05                3.20E-05             
+VGS          0.00E+00                0.00E+00             
+VDS          7.67E+00                1.80E+01             
+GM           1.00E-04                2.56E-05             
+GDS          0.00E+00                0.00E+00             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+
+
+**** MOSFETS
+
+
+NAME         M_M2        X_U6.M_M1               X_U6.M_U2_U1_M4       
+MODEL        IRF530      X_U6.NCHAN555           X_U6.NCHAN555         
+ID           2.00E-02   -3.75E-05                1.40E-22             
+VGS          1.13E+01    4.05E-10               -1.04E+00             
+VDS          2.30E-03   -2.87E-01                1.01E-10             
+VBS          0.00E+00    0.00E+00                0.00E+00             
+VTH          3.19E+00    2.00E-01                2.00E-01             
+VDSAT        8.07E+00    8.66E-02                0.00E+00             
+Lin0/Sat1   -1.00E+00   -1.00E+00               -1.00E+00             
+if          -1.00E+00   -1.00E+00               -1.00E+00             
+ir          -1.00E+00   -1.00E+00               -1.00E+00             
+TAU         -1.00E+00   -1.00E+00               -1.00E+00             
+GM           2.48E-03    8.66E-04                0.00E+00             
+GDS          5.69E+01    0.00E+00                0.00E+00             
+GMB          0.00E+00    0.00E+00                0.00E+00             
+CBD          1.15E-09    0.00E+00                0.00E+00             
+CBS          8.72E-18    0.00E+00                0.00E+00             
+CGSOV        5.96E-10    1.00E-15                1.00E-15             
+CGDOV        1.78E-10    1.00E-15                1.00E-15             
+CGBOV        0.00E+00    2.00E-18                2.00E-18             
+CGS          2.35E-10    0.00E+00                0.00E+00             
+CGD          2.35E-10    0.00E+00                0.00E+00             
+CGB          0.00E+00    0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U1_M3         X_U6.M_U2_U1_M6       
+MODEL        X_U6.NCHAN555           X_U6.NCHAN555         
+ID           1.80E-11                1.80E-11             
+VGS          1.80E+01                1.01E-10             
+VDS          1.01E-10                1.80E+01             
+VBS          0.00E+00                0.00E+00             
+VTH          2.00E-01                2.00E-01             
+VDSAT        1.78E+01                0.00E+00             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           1.01E-12                0.00E+00             
+GDS          1.78E-01                0.00E+00             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        1.00E-15                3.00E-16             
+CGDOV        1.00E-15                3.00E-16             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U1_M8         X_U6.M_U2_U1_M1       
+MODEL        X_U6.NCHAN555           X_U6.PCHAN555         
+ID           1.80E-11               -1.80E-11             
+VGS          1.80E+01               -1.90E+01             
+VDS          4.05E-10               -9.56E-11             
+VBS          0.00E+00                0.00E+00             
+VTH          2.00E-01               -2.00E-01             
+VDSAT        1.78E+01               -1.88E+01             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           1.01E-12                9.56E-13             
+GDS          4.45E-02                1.88E-01             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        2.50E-16                1.00E-15             
+CGDOV        2.50E-16                1.00E-15             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U1_M2         X_U6.M_U2_U1_M5       
+MODEL        X_U6.PCHAN555           X_U6.PCHAN555         
+ID          -1.80E-11               -1.80E-11             
+VGS         -3.09E-10               -1.80E+01             
+VDS         -1.80E+01               -3.37E-10             
+VBS          0.00E+00                0.00E+00             
+VTH         -2.00E-01               -2.00E-01             
+VDSAT        0.00E+00               -1.78E+01             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           0.00E+00                1.01E-12             
+GDS          0.00E+00                5.34E-02             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        1.00E-15                3.00E-16             
+CGDOV        1.00E-15                3.00E-16             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U1_M7         X_U6.M_U2_U2_M4       
+MODEL        X_U6.PCHAN555_OUT       X_U6.NCHAN555         
+ID          -1.80E-11                1.80E-11             
+VGS         -3.37E-10                4.05E-10             
+VDS         -1.80E+01                1.80E+01             
+VBS          0.00E+00                0.00E+00             
+VTH         -2.00E-01                2.00E-01             
+VDSAT        0.00E+00                0.00E+00             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           0.00E+00                0.00E+00             
+GDS          0.00E+00                0.00E+00             
+GMB          0.00E+00                0.00E+00             
+CBD          4.13E-11                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        3.50E-16                1.00E-15             
+CGDOV        3.50E-16                1.00E-15             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U2_M3         X_U6.M_U2_U2_M6       
+MODEL        X_U6.NCHAN555           X_U6.NCHAN555         
+ID           1.80E-11                1.80E-11             
+VGS          4.05E-10                1.80E+01             
+VDS          1.80E+01                3.37E-10             
+VBS          0.00E+00                0.00E+00             
+VTH          2.00E-01                2.00E-01             
+VDSAT        0.00E+00                1.78E+01             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           0.00E+00                1.01E-12             
+GDS          0.00E+00                5.34E-02             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        1.00E-15                3.00E-16             
+CGDOV        1.00E-15                3.00E-16             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U2_M8         X_U6.M_U2_U2_M1       
+MODEL        X_U6.NCHAN555           X_U6.PCHAN555         
+ID          -2.48E+03               -3.60E-11             
+VGS          3.37E-10               -1.80E+01             
+VDS         -1.04E+00               -2.02E-10             
+VBS          0.00E+00                0.00E+00             
+VTH          2.00E-01               -2.00E-01             
+VDSAT        8.36E-01               -1.78E+01             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           2.09E-03                2.02E-12             
+GDS          0.00E+00                1.78E-01             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        2.50E-16                1.00E-15             
+CGDOV        2.50E-16                1.00E-15             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U2_M2         X_U6.M_U2_U2_M5       
+MODEL        X_U6.PCHAN555           X_U6.PCHAN555         
+ID          -3.60E-11               -1.80E-11             
+VGS         -1.80E+01               -4.05E-10             
+VDS         -2.02E-10               -1.80E+01             
+VBS          0.00E+00                0.00E+00             
+VTH         -2.00E-01               -2.00E-01             
+VDSAT       -1.78E+01                0.00E+00             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           2.02E-12                0.00E+00             
+GDS          1.78E-01                0.00E+00             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        1.00E-15                3.00E-16             
+CGDOV        1.00E-15                3.00E-16             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U2_M7         X_U6.M_U2_U3_M1       
+MODEL        X_U6.PCHAN555_OUT       X_U6.PCHAN555         
+ID          -5.54E-01               -3.60E-11             
+VGS         -1.80E+01               -1.80E+01             
+VDS         -1.90E+01               -2.02E-10             
+VBS          0.00E+00                0.00E+00             
+VTH         -2.00E-01               -2.00E-01             
+VDSAT       -1.78E+01               -1.78E+01             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           6.23E-02                2.02E-12             
+GDS          0.00E+00                1.78E-01             
+GMB          0.00E+00                0.00E+00             
+CBD          4.02E-11                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        3.50E-16                1.00E-15             
+CGDOV        3.50E-16                1.00E-15             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U3_M2         X_U6.M_U2_U3_M3       
+MODEL        X_U6.PCHAN555           X_U6.NCHAN555         
+ID          -3.60E-11                1.80E-11             
+VGS         -1.80E+01                1.02E-10             
+VDS         -2.02E-10                1.80E+01             
+VBS          0.00E+00                0.00E+00             
+VTH         -2.00E-01                2.00E-01             
+VDSAT       -1.78E+01                0.00E+00             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           2.02E-12                0.00E+00             
+GDS          1.78E-01                0.00E+00             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        1.00E-15                1.00E-15             
+CGDOV        1.00E-15                1.00E-15             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U3_M4         X_U6.M_U2_U4_M1       
+MODEL        X_U6.NCHAN555           X_U6.PCHAN555         
+ID           1.80E-11               -1.80E-11             
+VGS          1.01E-10               -1.27E-08             
+VDS          1.80E+01               -1.80E+01             
+VBS          0.00E+00                0.00E+00             
+VTH          2.00E-01               -2.00E-01             
+VDSAT        0.00E+00                0.00E+00             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           0.00E+00                0.00E+00             
+GDS          0.00E+00                0.00E+00             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        1.00E-15                2.00E-18             
+CGDOV        1.00E-15                2.00E-18             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U4_M2         X_U6.M_U2_U4_M3       
+MODEL        X_U6.PCHAN555           X_U6.NCHAN555         
+ID          -1.80E-11                3.60E-11             
+VGS          0.00E+00                1.80E+01             
+VDS         -1.80E+01                2.02E-10             
+VBS          0.00E+00                0.00E+00             
+VTH         -2.00E-01                2.00E-01             
+VDSAT        0.00E+00                1.78E+01             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           0.00E+00                2.02E-12             
+GDS          0.00E+00                1.78E-01             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        2.00E-18                1.00E-15             
+CGDOV        2.00E-18                1.00E-15             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U4_M4         X_U6.M_U2_U5_M1       
+MODEL        X_U6.NCHAN555           X_U6.PCHAN555         
+ID           3.60E-11               -4.52E-12             
+VGS          1.80E+01               -1.80E+01             
+VDS          2.02E-10               -1.27E-08             
+VBS          0.00E+00                0.00E+00             
+VTH          2.00E-01               -2.00E-01             
+VDSAT        1.78E+01               -1.78E+01             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           2.02E-12                2.54E-13             
+GDS          1.78E-01                3.56E-04             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        1.00E-15                2.00E-18             
+CGDOV        1.00E-15                2.00E-18             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U5_M2         X_U6.M_U2_U5_M3       
+MODEL        X_U6.PCHAN555           X_U6.NCHAN555         
+ID          -4.49E-12                9.01E-12             
+VGS         -1.79E+01               -9.00E+00             
+VDS         -1.27E-08                9.00E+00             
+VBS          0.00E+00                0.00E+00             
+VTH         -2.00E-01                2.00E-01             
+VDSAT       -1.77E+01                0.00E+00             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           2.54E-13                0.00E+00             
+GDS          3.53E-04                0.00E+00             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        2.00E-18                1.00E-15             
+CGDOV        2.00E-18                1.00E-15             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U5_M4         X_U6.M_U2_U6_M2       
+MODEL        X_U6.NCHAN555           X_U6.NCHAN555         
+ID           9.01E-12                1.80E-11             
+VGS          1.44E-01                1.79E+01             
+VDS          9.00E+00                1.02E-10             
+VBS          0.00E+00                0.00E+00             
+VTH          2.00E-01                2.00E-01             
+VDSAT        0.00E+00                1.77E+01             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           0.00E+00                1.02E-12             
+GDS          0.00E+00                1.77E-01             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        1.00E-15                1.00E-15             
+CGDOV        1.00E-15                1.00E-15             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U6_M3         X_U6.M_U2_U7_M2       
+MODEL        X_U6.PCHAN555           X_U6.NCHAN555         
+ID          -1.80E-11                1.80E-11             
+VGS         -1.44E-01                1.80E+01             
+VDS         -1.80E+01                1.01E-10             
+VBS          0.00E+00                0.00E+00             
+VTH         -2.00E-01                2.00E-01             
+VDSAT        0.00E+00                1.78E+01             
+Lin0/Sat1   -1.00E+00               -1.00E+00             
+if          -1.00E+00               -1.00E+00             
+ir          -1.00E+00               -1.00E+00             
+TAU         -1.00E+00               -1.00E+00             
+GM           0.00E+00                1.01E-12             
+GDS          0.00E+00                1.78E-01             
+GMB          0.00E+00                0.00E+00             
+CBD          0.00E+00                0.00E+00             
+CBS          0.00E+00                0.00E+00             
+CGSOV        2.00E-18                1.00E-15             
+CGDOV        2.00E-18                1.00E-15             
+CGBOV        2.00E-18                2.00E-18             
+CGS          0.00E+00                0.00E+00             
+CGD          0.00E+00                0.00E+00             
+CGB          0.00E+00                0.00E+00             
+
+NAME         X_U6.M_U2_U7_M3       
+MODEL        X_U6.PCHAN555         
+ID          -1.80E-11             
+VGS          0.00E+00             
+VDS         -1.80E+01             
+VBS          0.00E+00             
+VTH         -2.00E-01             
+VDSAT        0.00E+00             
+Lin0/Sat1   -1.00E+00             
+if          -1.00E+00             
+ir          -1.00E+00             
+TAU         -1.00E+00             
+GM           0.00E+00             
+GDS          0.00E+00             
+GMB          0.00E+00             
+CBD          0.00E+00             
+CBS          0.00E+00             
+CGSOV        2.00E-18             
+CGDOV        2.00E-18             
+CGBOV        2.00E-18             
+CGS          0.00E+00             
+CGD          0.00E+00             
+CGB          0.00E+00             
+**** 05/09/26 11:58:20 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V+)   20.0000  (  -6V)   -6.0000  ( +12V)   12.0000  ( -12V)  -12.0000      
+
+(X_U1.6)-799.1E-06 (X_U1.7)    8.4782 (X_U1.8)    8.4782 (X_U1.9)    0.0000     
+
+(X_U5.4)   -6.4226 (X_U5.5)   -5.6899 (X_U5.6)   -4.1976 (X_U5.7)    2.7293     
+
+(X_U5.8)   -5.6286 (X_U5.9)   54.2990 (X_U6.1)   -6.0000 (X_U6.2)   -6.0000     
+
+(X_U6.3) 10.35E+03 (X_U6.4)   11.2000 (X_U6.5)   11.0560 (X_U6.6)-10.37E+03     
+
+(X_U6.7)   11.2000 (X_U6.8)   -6.6560 (X_U6.9)   -6.0000 ($N_0001)    9.1368    
+
+($N_0002)   -7.0359                   ($N_0003)   -7.6726                       
+
+($N_0004)   -9.0562                   ($N_0005)    9.2063                       
+
+($N_0006)    9.1365                   ($N_0007)    8.4783                       
+
+($N_0010)   -7.0359                   ($N_0011)   11.2480                       
+
+($N_0012)   -6.0000                   ($N_0013) 1.435E-09                       
+
+($N_0014)   11.9400                   ($N_0015)    1.6783                       
+
+($N_0016)    6.2937                   ($N_0017)    -.5836                       
+
+($N_0018)   11.2610                   ($N_0019)     .0023                       
+
+($N_0020)   11.2720                   ($N_0021)   -6.2866                       
+
+(X_U1.10)    8.5271                   (X_U1.11)   11.9590                       
+
+(X_U1.12)   11.9580                   (X_U1.13)    8.5416                       
+
+(X_U1.14)    8.5417                   (X_U1.53)   11.0000                       
+
+(X_U1.54)  -11.0000                   (X_U1.90)-714.2E-06                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    0.0000                   (X_U5.10)   -5.6885                       
+
+(X_U5.11)   -5.6525                   (X_U5.12)   -4.1042                       
+
+(X_U5.13)   -1.4054                   (X_U5.15)   -5.6899                       
+
+(X_U6.10)   12.0000                   (X_U6.11)   12.0000                       
+
+(X_U6.12)   12.0000                   (X_U6.13)   -6.0000                       
+
+(X_U6.14)   -6.0000                   (X_U6.15)   12.0000                       
+
+(X_U6.16)   12.0000                   (X_U6.17)   12.0000                       
+
+(X_U6.18)   -6.0000                   (X_U6.19)   -6.0000                       
+
+(X_U6.20)   12.0000                   (X_U6.21)   -5.8560                       
+
+(X_U6.22)    3.0000                   (X_U6.23)   11.8560                       
+
+(X_U6.24)   -6.0000                   (X_U6.25)   -6.0000                       
+
+(X_U6.VDD)   12.0000                  (X_U16A.x_lm393.7)     .8273              
+
+(X_U16A.x_lm393.8)     .6503          (X_U16A.x_lm393.9)     .0179              
+
+(X_U16A.x_lm393.10)     .0179         (X_U16A.x_lm393.11)     .0179             
+
+(X_U16A.x_lm393.21)    2.4283         (X_U16A.x_lm393.22)     .1664         
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V19       -2.000E-02
+    V_V1        -1.500E+04
+    V_V2         8.482E+03
+    V_V5         6.520E+03
+    X_U5.VREF   -6.134E-09
+    X_U1.vb     -7.991E-09
+    X_U1.vc      2.523E-12
+    X_U1.ve      1.939E-11
+    X_U1.vlim   -7.142E-07
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.000E-11
+    X_U6.V_U6_V2   1.707E-11
+    X_U6.V_U7_V2  -1.036E-03
+    X_U16A.x_lm393.vi1  -2.412E-12
+    X_U16A.x_lm393.vi2   1.569E-07
+    X_U16A.x_lm393.v1  -1.192E-11
+
+    TOTAL POWER DISSIPATION   3.21E+05  WATTS
+
+
+ERROR -- Convergence problem in transient analysis at Time =  303.2E-09
+         Time step =  1.617E-15, minimum allowable step size =  5.000E-15
+
+  These voltages failed to converge:
+
+    V(X_U5.11)                =   247.02KV  \     7.455V
+
+  These supply currents failed to converge:
+
+    I(X_U5.ESC)               =  -247.15nA  \   -5.976uA
+
+  These devices failed to converge:
+    M_M2      
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V+)   20.0000  (  -6V)   -6.0000  ( +12V)   12.0000  ( -12V)  -12.0000      
+
+(X_U1.6)-798.5E-06 (X_U1.7)    8.4748 (X_U1.8)    8.4748 (X_U1.9)    0.0000     
+
+(X_U5.4)   -1.9714 (X_U5.5)    -.5755 (X_U5.6)    7.1428 (X_U5.7)    7.2030     
+
+(X_U5.8)    -.6040 (X_U5.9)   -7.1995 (X_U6.1)   12.0000 (X_U6.2)   -5.9982     
+
+(X_U6.3)-41.77E+03 (X_U6.4)   11.2000 (X_U6.5)   -6.6921 (X_U6.6) 41.74E+03     
+
+(X_U6.7)   11.2000 (X_U6.8)   11.0920 (X_U6.9)   10.9970 ($N_0001)    9.1368    
+
+($N_0002)   -1.9186                   ($N_0003)   -3.2214                       
+
+($N_0004)   -6.0281                   ($N_0005)    9.2045                       
+
+($N_0006)    9.1346                   ($N_0007)    8.4749                       
+
+($N_0010)   -1.8219                   ($N_0011)   11.2480                       
+
+($N_0012)   -5.9964                   ($N_0013) 387.6E-12                       
+
+($N_0014)   11.9400                   ($N_0015)    1.6783                       
+
+($N_0016)    6.2937                   ($N_0017)    -.5092                       
+
+($N_0018)   11.2610                   ($N_0019)     .0023                       
+
+($N_0020)   11.2720                   ($N_0021)   -5.9988                       
+
+(X_U1.10)    8.5262                   (X_U1.11)   11.9580                       
+
+(X_U1.12)   11.9590                   (X_U1.13)    8.5404                       
+
+(X_U1.14)    8.5411                   (X_U1.53)   11.0000                       
+
+(X_U1.54)  -11.0000                   (X_U1.90)    -.0023                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    0.0000                   (X_U5.10)    -.5974                       
+
+(X_U5.11) 247.0E+03                   (X_U5.12)   10.9300                       
+
+(X_U5.13)   -1.3008                   (X_U5.15)   -4.5801                       
+
+(X_U6.10)   -5.9807                   (X_U6.11)   11.4390                       
+
+(X_U6.12)   -6.0005                   (X_U6.13)   12.0000                       
+
+(X_U6.14)   12.0000                   (X_U6.15)   12.0250                       
+
+(X_U6.16)   12.0000                   (X_U6.17)   -6.0002                       
+
+(X_U6.18)   12.0000                   (X_U6.19)   -6.0000                       
+
+(X_U6.20)   -6.0000                   (X_U6.21)   11.8920                       
+
+(X_U6.22)   -6.0000                   (X_U6.23)   -5.8921                       
+
+(X_U6.24)   12.0000                   (X_U6.25)   -6.0000                       
+
+(X_U6.VDD)   12.0000                  (X_U16A.x_lm393.7)     .9017              
+
+(X_U16A.x_lm393.8)     .6503          (X_U16A.x_lm393.9)     .0179              
+
+(X_U16A.x_lm393.10)     .0179         (X_U16A.x_lm393.11)     .0179             
+
+(X_U16A.x_lm393.21)    2.4283         (X_U16A.x_lm393.22)     .2408         
+

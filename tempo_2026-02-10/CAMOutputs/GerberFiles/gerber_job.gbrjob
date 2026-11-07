@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2026-02-10T14:54:28Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.6.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "tempo"
+        },
+        "Owner": "wassim toukebri <wassim.toukebri@etudiant-enit.utm.tn>",
+        "Size": {
+            "X": 50.78,
+            "Y": 50.47
+        }
+    }
+}

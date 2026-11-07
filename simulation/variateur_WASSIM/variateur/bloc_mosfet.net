@@ -1,0 +1,12 @@
+* Schematics Netlist *
+
+
+
+R_R7         $N_0002 $N_0001  10  
+R_R8         $N_0002 0  10k  
+M_M1         $N_0003 $N_0002 0 0 IRF530
+R_R9         $N_0003 V+  2  
+D_D2         $N_0003 V+ MUR820 
+V_V4         $N_0001 0  
++PULSE 0V 12V 0 10ns 10ns 50us 100us
+V_V5         V+ 0 24V

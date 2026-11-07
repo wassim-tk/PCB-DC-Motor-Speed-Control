@@ -1,0 +1,559 @@
+
+**** 05/09/26 20:32:55 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Sat May 09 20:32:46 2026
+
+
+
+** Analysis setup **
+.tran 0ms 5ms 0ms 1us SKIPBP
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "bloc_mosfet.net"
+
+
+
+**** INCLUDING bloc_mosfet.net ****
+* Schematics Netlist *
+
+
+
+R_R1         $N_0001 +12V  6.8k  
+R_R2         $N_0002 $N_0001  5.5k  
+D_D1         0 $N_0003 D1N4148 
+R_R3         0 $N_0002  4.5k  
+X_U1A         $N_0002 $N_0003 +12V 0 $N_0004 LM393
+R_R5         $N_0004 +12V  10k  
+Q_Q1         0 $N_0005 $N_0004 BC547A 
+R_R6         0 $N_0005  10k  
+C_C1         +12V 0  100n IC=0 
+R_R4         $N_0003 $N_0006  470  
+V_V4         $N_0006 0  
++PULSE 0 12V 0V 1.5us 1ns 1ns 3us
+V_V1         +12V 0 12V
+V_V2         -12V 0 -12V
+V_V3         -6V 0 -6V
+V_V5         V+ 0 220V
+Q_Q2         0 $N_0004 $N_0007 BC557A 
+Q_Q3         +12V $N_0004 $N_0007 BC547A 
+R_R7         $N_0008 $N_0007  10  
+R_R8         $N_0008 0  10k  
+D_D2         $N_0009 V+ MUR820 
+R_R9         $N_0009 V+  2  
+M_M1         $N_0009 $N_0008 0 0 IRF530
+
+**** RESUMING bloc_mosfet.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 05/09/26 20:32:55 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4148         MUR820          
+          IS    2.682000E-09    1.026000E-12 
+           N    1.836                        
+         ISR    1.565000E-09   10.290000E-09 
+         IKF     .04417          .01771      
+          BV  100                            
+         IBV  100.000000E-06                 
+          RS     .5664           .03634      
+          TT   11.540000E-09  123.300000E-09 
+         CJO    4.000000E-12  367.000000E-12 
+          VJ     .5              .75         
+           M     .3333           .4068       
+         XTI                   10            
+
+
+               X_U1A.x_lm393.dx 
+          IS  800.000000E-18 
+          RS    1            
+
+
+**** 05/09/26 20:32:55 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               BC547A          BC557A          
+               NPN             PNP             
+          IS    7.049000E-15    1.020000E-15 
+          BF  253             174.7          
+          NF    1               1            
+         VAF  127.9            73.79         
+         IKF     .07705          .1023       
+         ISE   96.260000E-15   10.730000E-15 
+          NE    1.556           1.644        
+          BR    1               4.432        
+          NR    1               1            
+         IKR    3.321           2.237        
+         ISC  130.800000E-15   14.740000E-15 
+          NC    1.602           1.296        
+          NK     .5305           .5033       
+          RC     .8766          1.039        
+         CJE   11.500000E-12   30.000000E-12 
+         VJE     .5              .5          
+         MJE     .6715           .3333       
+         CJC    5.250000E-12    9.810000E-12 
+         VJC     .5697           .4865       
+         MJC     .3147           .332        
+          TF  409.500000E-12  830.300000E-12 
+         XTF   40.12           10.32         
+         VTF   10              10            
+         ITF    1.994            .8981       
+          TR   10.000000E-09   10.000000E-09 
+         XTB    1.5             1.5          
+          CN    2.42            2.2          
+           D     .87             .52         
+
+
+               X_U1A.x_lm393.qin 
+               PNP             
+          IS  800.000000E-18 
+          BF    2.000000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+          CN    2.2          
+           D     .52         
+
+
+               X_U1A.x_lm393.qmi 
+               NPN             
+          IS  800.000000E-18 
+          BF    1.002000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+          CN    2.42         
+           D     .87         
+
+
+               X_U1A.x_lm393.qmo 
+               NPN             
+          IS  800.000000E-18 
+          BF    1.000000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         CJC    1.000000E-15 
+          TR  475.400000E-09 
+          CN    2.42         
+           D     .87         
+
+
+               X_U1A.x_lm393.qoc 
+               NPN             
+          IS  800.000000E-18 
+          BF   20.690000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         CJC    1.000000E-15 
+          TF    3.540000E-09 
+          TR  472.800000E-09 
+          CN    2.42         
+           D     .87         
+
+
+**** 05/09/26 20:32:55 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IRF530          
+               NMOS            
+       LEVEL    3            
+           L    2.000000E-06 
+           W     .68         
+         VTO    3.191        
+          KP   20.730000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          RD     .03869      
+          RS     .05853      
+          RG    4.63         
+         RDS  444.400000E+03 
+          IS    1.861000E-12 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD    1.151000E-09 
+          CJ    0            
+        CJSW    0            
+          TT  125.000000E-09 
+        CGSO  876.700000E-12 
+        CGDO  261.400000E-12 
+        CGBO    0            
+         TOX  100.000000E-09 
+          XJ    0            
+       UCRIT   10.000000E+03 
+       DELTA    0            
+         ETA    0            
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    0            
+       XPART    0            
+
+
+**** 05/09/26 20:32:55 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V+)  220.0000  (  -6V)   -6.0000  ( +12V)   12.0000  ( -12V)  -12.0000      
+
+($N_0001)    7.1429                   ($N_0002)    3.2143                       
+
+($N_0003) 23.49E-06                   ($N_0004)   11.9400                       
+
+($N_0005) 1.435E-09                   ($N_0006)    0.0000                       
+
+($N_0007)   11.2720                   ($N_0008)   11.2610                       
+
+($N_0009)   90.6360                   (X_U1A.x_lm393.7)    1.4109               
+
+(X_U1A.x_lm393.8)     .6503           (X_U1A.x_lm393.9)     .0179               
+
+(X_U1A.x_lm393.10)     .0179          (X_U1A.x_lm393.11)     .0179              
+
+(X_U1A.x_lm393.21)    3.9643          (X_U1A.x_lm393.22)     .7500          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V4         4.997E-08
+    V_V1        -2.260E-03
+    V_V2         0.000E+00
+    V_V3         0.000E+00
+    V_V5        -6.468E+01
+    X_U1A.x_lm393.vi1  -3.948E-12
+    X_U1A.x_lm393.vi2   4.997E-08
+    X_U1A.x_lm393.v1  -1.192E-11
+
+    TOTAL POWER DISSIPATION   1.42E+04  WATTS
+
+
+**** 05/09/26 20:32:55 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1A.x_lm393.e1      
+V-SOURCE     1.793E-02            
+I-SOURCE     1.192E-11            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1A.x_lm393.f1      
+I-SOURCE    -1.192E-11            
+
+
+**** DIODES
+
+
+NAME         D_D1        D_D2        X_U1A.x_lm393.dp      
+MODEL        D1N4148     MUR820      X_U1A.x_lm393.dx      
+ID          -2.04E-12   -8.38E-08   -1.20E-11             
+VD          -2.35E-05   -1.29E+02   -1.20E+01             
+REQ          1.15E+07    5.09E+09    1.00E+12             
+CAP          4.00E-12    4.51E-11    0.00E+00             
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q1        Q_Q2        Q_Q3        X_U1A.x_lm393.q1      
+MODEL        BC547A      BC557A      BC547A      X_U1A.x_lm393.qin     
+IB          -1.43E-13    2.72E-12    6.03E-06    3.95E-12             
+IC          -1.19E-11   -1.58E-11    1.12E-03   -5.34E-12             
+VBE         -1.19E+01    6.67E-01    6.67E-01    2.55E+00             
+VBC          1.43E-09    1.19E+01   -6.03E-02    3.95E+00             
+VCE         -1.19E+01   -1.13E+01    7.28E-01   -1.39E+00             
+BETADC       8.33E+01   -5.80E+00    1.86E+02   -1.35E+00             
+GM          -1.79E-13   -1.53E-13    4.26E-02    0.00E+00             
+RPI          2.53E+14    1.75E+14    4.72E+03    2.00E+15             
+RX           0.00E+00    0.00E+00    0.00E+00    0.00E+00             
+RO           8.48E+11    7.61E+11    1.14E+05    1.00E+12             
+CBE          1.33E-12    2.26E-11    5.63E-11    0.00E+00             
+CBC          5.25E-12    3.35E-12    5.09E-12    0.00E+00             
+CJS          0.00E+00    0.00E+00    0.00E+00    0.00E+00             
+BETAAC      -4.53E+01   -2.67E+01    2.01E+02    0.00E+00             
+CBX/CBX2     0.00E+00    0.00E+00    0.00E+00    0.00E+00             
+FT/FT2      -4.33E-03   -9.37E-04    1.11E+08    0.00E+00             
+
+
+
+NAME         X_U1A.x_lm393.q2        X_U1A.x_lm393.q3      
+MODEL        X_U1A.x_lm393.qin       X_U1A.x_lm393.qmo     
+IB          -5.00E-08                3.33E-05             
+IC          -1.00E-04                2.92E-11             
+VBE         -6.61E-01                6.50E-01             
+VBC          9.97E-02                6.32E-01             
+VCE         -7.61E-01                1.79E-02             
+BETADC       2.00E+03                8.77E-07             
+GM           3.86E-03                1.29E-03             
+RPI          5.18E+05                3.89E+05             
+RX           0.00E+00                0.00E+00             
+RO           9.99E+11                7.77E+02             
+CBE          0.00E+00                0.00E+00             
+CBC          0.00E+00                6.12E-10             
+CJS          0.00E+00                0.00E+00             
+BETAAC       2.00E+03                5.00E+02             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2       6.15E+16                3.35E+05             
+
+
+
+NAME         X_U1A.x_lm393.q4        X_U1A.x_lm393.q5      
+MODEL        X_U1A.x_lm393.qmi       X_U1A.x_lm393.qoc     
+IB           6.64E-08               -1.19E-11             
+IC           6.65E-05                2.39E-11             
+VBE          6.50E-01                1.79E-02             
+VBC          0.00E+00               -1.19E+01             
+VCE          6.50E-01                1.19E+01             
+BETADC       1.00E+03               -2.00E+00             
+GM           2.57E-03                6.19E-14             
+RPI          3.89E+05                1.95E+16             
+RX           0.00E+00                0.00E+00             
+RO           9.70E+11                1.00E+12             
+CBE          0.00E+00                3.76E-21             
+CBC          0.00E+00                3.94E-16             
+CJS          0.00E+00                0.00E+00             
+BETAAC       1.00E+03                1.21E+03             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2       4.09E+16                2.50E+01             
+
+
+
+
+**** MOSFETS
+
+
+NAME         M_M1      
+MODEL        IRF530    
+ID           6.47E+01 
+VGS          1.13E+01 
+VDS          9.06E+01 
+VBS          0.00E+00 
+VTH          3.19E+00 
+VDSAT        4.28E+00 
+Lin0/Sat1   -1.00E+00 
+if          -1.00E+00 
+ir          -1.00E+00 
+TAU         -1.00E+00 
+GM           3.02E+01 
+GDS          2.25E-06 
+GMB          0.00E+00 
+CBD          1.09E-10 
+CBS          1.25E-19 
+CGSOV        5.96E-10 
+CGDOV        1.78E-10 
+CGBOV        0.00E+00 
+CGS          3.13E-10 
+CGD          0.00E+00 
+CGB          0.00E+00 
+ERROR -- Convergence problem in transient analysis at Time =  1.503E-06
+         Time step =  1.148E-15, minimum allowable step size =  5.000E-15
+
+  These devices failed to converge:
+    D_D2      
+
+ERROR -- Discontinuing simulation due to convergence problem
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V+)  220.0000  (  -6V)   -6.0000  ( +12V)   12.0000  ( -12V)  -12.0000      
+
+($N_0001)    7.1429                   ($N_0002)    3.2143                       
+
+($N_0003)    2.9056                   ($N_0004)     .0717                       
+
+($N_0005)    -.0047                   ($N_0006)    0.0000                       
+
+($N_0007)     .0729                   ($N_0008)     .0729                       
+
+($N_0009)  220.0000                   (X_U1A.x_lm393.7)    4.3164               
+
+(X_U1A.x_lm393.8)     .4969           (X_U1A.x_lm393.9)     .7287               
+
+(X_U1A.x_lm393.10)     .7287          (X_U1A.x_lm393.11)     .7287              
+
+(X_U1A.x_lm393.21)    3.9643          (X_U1A.x_lm393.22)    3.6556          
+
+
+ **** Runtime Parameters
+                              
+      ABSTOL =      1.0000E-12
+        GMIN =      1.0000E-12
+        ITL1 =      1.5000E+02
+        ITL2 =      2.0000E+01
+        ITL4 =      1.0000E+01
+      RELTOL =      1.0000E-03
+      RUNFOR =      0.0000E+00
+        TMAX =      1.0000E-06
+       TSTOP =      5.0000E-03
+       VNTOL =      1.0000E-06
+              
+               
+
+ERROR -- Convergence problem in transient analysis at Time =  1.503E-06
+         Time step =  1.148E-15, minimum allowable step size =  5.000E-15
+
+  These devices failed to converge:
+    D_D2      
+
+ERROR -- Discontinuing simulation due to convergence problem
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V+)  220.0000  (  -6V)   -6.0000  ( +12V)   12.0000  ( -12V)  -12.0000      
+
+($N_0001)    7.1429                   ($N_0002)    3.2143                       
+
+($N_0003)    2.9056                   ($N_0004)     .0717                       
+
+($N_0005)    -.0047                   ($N_0006)    0.0000                       
+
+($N_0007)     .0729                   ($N_0008)     .0729                       
+
+($N_0009)  220.0000                   (X_U1A.x_lm393.7)    4.3164               
+
+(X_U1A.x_lm393.8)     .4969           (X_U1A.x_lm393.9)     .7287               
+
+(X_U1A.x_lm393.10)     .7287          (X_U1A.x_lm393.11)     .7287              
+
+(X_U1A.x_lm393.21)    3.9643          (X_U1A.x_lm393.22)    3.6556          
+
+
+ **** Runtime Parameters
+                              
+      ABSTOL =      1.0000E-12
+        GMIN =      1.0000E-12
+        ITL1 =      1.5000E+02
+        ITL2 =      2.0000E+01
+        ITL4 =      1.0000E+01
+      RELTOL =      1.0000E-03
+      RUNFOR =      0.0000E+00
+        TMAX =      1.0000E-06
+       TSTOP =      5.0000E-03
+       VNTOL =      1.0000E-06
+              
+               
+
+ERROR -- Convergence problem in transient analysis at Time =  1.503E-06
+         Time step =  1.148E-15, minimum allowable step size =  5.000E-15
+
+  These devices failed to converge:
+    D_D2      
+
+ERROR -- Discontinuing simulation due to convergence problem
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V+)  220.0000  (  -6V)   -6.0000  ( +12V)   12.0000  ( -12V)  -12.0000      
+
+($N_0001)    7.1429                   ($N_0002)    3.2143                       
+
+($N_0003)    2.9056                   ($N_0004)     .0717                       
+
+($N_0005)    -.0047                   ($N_0006)    0.0000                       
+
+($N_0007)     .0729                   ($N_0008)     .0729                       
+
+($N_0009)  220.0000                   (X_U1A.x_lm393.7)    4.3164               
+
+(X_U1A.x_lm393.8)     .4969           (X_U1A.x_lm393.9)     .7287               
+
+(X_U1A.x_lm393.10)     .7287          (X_U1A.x_lm393.11)     .7287              
+
+(X_U1A.x_lm393.21)    3.9643          (X_U1A.x_lm393.22)    3.6556          
+

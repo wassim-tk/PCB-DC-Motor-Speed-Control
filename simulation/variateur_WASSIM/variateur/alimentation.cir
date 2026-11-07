@@ -1,0 +1,22 @@
+* D:\ENIT 1\mini projet\variateur-\variateur\alimentation.sch
+
+* Schematics Version 9.2
+* Thu Apr 23 00:24:11 2026
+
+
+
+** Analysis setup **
+.tran 0 500ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "alimentation.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

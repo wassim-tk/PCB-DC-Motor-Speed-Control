@@ -1,0 +1,502 @@
+
+**** 04/23/26 00:24:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\ENIT 1\mini projet\variateur-\variateur\alimentation.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Thu Apr 23 00:24:11 2026
+
+
+
+** Analysis setup **
+.tran 0 500ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "alimentation.net"
+
+
+
+**** INCLUDING alimentation.net ****
+* Schematics Netlist *
+
+
+
+D_D3         $N_0001 $N_0002 D1N4004 
+D_D1         $N_0003 $N_0002 D1N4004 
+C_C12         -VCC 0  100n  
+C_C11         0 +VCC  100n  
+D_D6         0 $N_0004 MLED81 
+C_C2         0 $N_0002  1u  
+C_C4         $N_0005 0  1u  
+X_U2         $N_0005 -VCC 0 SG7912C
+D_D4         $N_0005 $N_0001 D1N4004 
+D_D2         $N_0005 $N_0003 D1N4004 
+R_R2         +VCC $N_0006  1k  
+V_V8         0 $N_0001  
++SIN 0 12v 50Hz 0 0 0
+V_V9         $N_0003 0  
++SIN 0 12v 50Hz 0 0 0
+X_U3         $N_0002 +VCC 0 UPC7812
+D_D5         $N_0006 0 MLED81 
+R_R1         -VCC $N_0004  1k  
+C_C1         0 $N_0002  2200u  
+C_C3         $N_0005 0  2200u  
+
+**** RESUMING alimentation.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 04/23/26 00:24:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\ENIT 1\mini projet\variateur-\variateur\alimentation.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4004         MLED81          D1N4001         X_U2.x1.Dlim    
+          IS   14.110000E-09   10.000000E-09   14.110000E-09   10.000000E-15 
+           N    1.984           1.1248          1.984                        
+         ISR                   10.010000E-21                                 
+         IKF   94.81           45.752000E-15   94.81                         
+          BV  600               5.4169         75                            
+         IBV   10.000000E-06   10              10.000000E-06                 
+          RS     .03389         1.2366           .03389                      
+          TT    5.700000E-06    5.000000E-09    5.700000E-06                 
+         CJO   25.890000E-12   25.000000E-12   25.890000E-12                 
+          VJ     .3245           .75             .3245           .7          
+           M     .44             .3333           .44                         
+
+
+               X_U2.x1.Dz      X_U3.x1.Dlim    X_U3.x1.Dz      
+          IS   50.000000E-15   10.000000E-15   50.000000E-15 
+          BV    7.11                            7.11         
+         IBV   50.000000E-09                   50.000000E-09 
+          RS    3                               3            
+          VJ                     .7                          
+
+
+**** 04/23/26 00:24:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\ENIT 1\mini projet\variateur-\variateur\alimentation.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.x1.Npn1    X_U2.x1.Pnp1    X_U3.x1.Npn1    
+               NPN             PNP             NPN             
+          IS   10.000000E-15   10.000000E-15   10.000000E-15 
+          BF   50             250              50            
+          NF    1               1               1            
+          BR    1               1               1            
+          NR    1               1               1            
+          CN    2.42            2.2             2.42         
+           D     .87             .52             .87         
+
+
+**** 04/23/26 00:24:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\ENIT 1\mini projet\variateur-\variateur\alimentation.sch
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.x1.Rbg1    
+           R    1            
+         TC1 -950.000000E-09 
+         TC2 -653.000000E-09 
+
+
+**** 04/23/26 00:24:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\ENIT 1\mini projet\variateur-\variateur\alimentation.sch
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.x1.Sbg1    X_U3.x1.Sbg1    
+         RON    1               1            
+        ROFF    1.000000E+06    1.000000E+06 
+         VON    3.7             3.7          
+        VOFF    3               3            
+
+
+**** 04/23/26 00:24:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\ENIT 1\mini projet\variateur-\variateur\alimentation.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( +VCC) 2.384E-18  ( -VCC)-575.5E-09  ($N_0001)    0.0000                       
+
+($N_0002)-45.17E-18                   ($N_0003)    0.0000                       
+
+($N_0004)-575.4E-09                   ($N_0005)    -.4397                       
+
+($N_0006) 2.384E-18                   (X_U2.x1.4)    -.2198                     
+
+(X_U2.x1.5)    -.2194                 (X_U2.x1.6)    -.4396                     
+
+(X_U2.x1.7)    -.4396                 (X_U2.x1.8)-575.5E-09                     
+
+(X_U2.x1.9)-575.5E-09                 (X_U3.x1.4) 348.1E-12                     
+
+(X_U3.x1.5) 348.1E-12                 (X_U3.x1.6) 2.404E-18                     
+
+(X_U3.x1.7) 2.385E-18                 (X_U3.x1.8) 2.384E-18                     
+
+(X_U3.x1.9) 2.384E-18                 (X_U2.x1.50)    -.4052                    
+
+(X_U2.x1.51)    -.4052                (X_U2.x1.52)     .2183                    
+
+(X_U2.x1.53)    -.1397                (X_U2.x1.54)    -.2187                    
+
+(X_U3.x1.55) 2.525E-18                (X_U3.x1.56) 2.525E-18                    
+
+(X_U2.x1.100)   -7.4000               (X_U2.x1.101)-55.71E-06                   
+
+(X_U2.x1.102)    -.4397               (X_U2.x1.105)    -.1249                   
+
+(X_U2.x1.106)    -.2198               (X_U2.x1.107)   -1.0000                   
+
+(X_U2.x1.108)     .5603               (X_U2.x1.200)  694.0000                   
+
+(X_U3.x1.100)    7.4000               (X_U3.x1.101) 7.399E-06                   
+
+(X_U3.x1.102)-45.17E-18               (X_U3.x1.105)     .0166                   
+
+(X_U3.x1.106) 348.1E-12               (X_U3.x1.107)    1.0000                   
+
+(X_U3.x1.108)   -1.0000               (X_U3.x1.200)  694.0000                   
+
+(X_U2.x1.Imon)-575.5E-09              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         1.411E-08
+    V_V9        -1.411E-08
+    X_U2.x1.Vbg   7.400E-06
+    X_U2.x1.Vgainf  -6.940E+02
+    X_U2.x1.Vl1  -1.259E-01
+    X_U2.x1.Vl2  -1.260E-01
+    X_U2.x1.Vmon  -8.573E-14
+    X_U2.x1.Veset  -2.067E-07
+    X_U3.x1.Vbg  -7.400E-06
+    X_U3.x1.Vgainf  -6.940E+02
+    X_U3.x1.Vl1  -6.185E+02
+    X_U3.x1.Vl2  -6.185E+02
+
+    TOTAL POWER DISSIPATION   9.65E+05  WATTS
+
+
+**** 04/23/26 00:24:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\ENIT 1\mini projet\variateur-\variateur\alimentation.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U2.x1.Gq  X_U3.x1.Gq
+I-SOURCE     3.957E-07  -9.511E-22
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U2.x1.Ebg             X_U2.x1.Eopamp        
+V-SOURCE    -4.397E-01              -1.249E-01            
+I-SOURCE    -1.258E-01              -9.488E-05            
+
+NAME         X_U2.x1.Efb             X_U3.x1.Ebg           
+V-SOURCE    -2.198E-01              -4.517E-17            
+I-SOURCE     4.240E-07               6.185E+02            
+
+NAME         X_U3.x1.Eopamp          X_U3.x1.Efb           
+V-SOURCE     1.665E-02              -3.481E-10            
+I-SOURCE    -1.665E-05               1.458E-21            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U2.x1.Fl
+I-SOURCE    -2.572E-17
+
+
+**** DIODES
+
+
+NAME         D_D3        D_D1        D_D6        D_D4        D_D2      
+MODEL        D1N4004     D1N4004     MLED81      D1N4004     D1N4004   
+ID           1.25E-23    1.25E-23    8.57E-14   -1.41E-08   -1.41E-08 
+VD           4.52E-17    4.52E-17    5.75E-07   -4.40E-01   -4.40E-01 
+REQ          3.64E+06    3.64E+06    1.13E+07    1.88E+10    1.88E+10 
+CAP          2.75E-11    2.75E-11    2.50E-11    1.78E-11    1.78E-11 
+
+NAME         D_D5        X_U2.x1.D1              X_U2.x1.D2            
+MODEL        MLED81      X_U2.x1.Dlim            X_U2.x1.Dlim          
+ID           0.00E+00    1.26E-01                1.26E-01             
+VD           2.38E-18    7.80E-01                7.80E-01             
+REQ          2.91E+06    2.06E-01                2.05E-01             
+CAP          2.50E-11    0.00E+00                0.00E+00             
+
+NAME         X_U2.x1.Dz1             X_U3.x1.D1            
+MODEL        X_U2.x1.Dz              X_U3.x1.Dlim          
+ID          -4.55E-13                6.19E+02             
+VD          -4.05E-01                1.00E+00             
+REQ          1.00E+12                4.18E-05             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_U3.x1.D2              X_U3.x1.Dz1           
+MODEL        X_U3.x1.Dlim            X_U3.x1.Dz            
+ID           6.19E+02                1.37E-28             
+VD           1.00E+00                4.77E-17             
+REQ          4.18E-05                3.41E+11             
+CAP          0.00E+00                0.00E+00             
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         X_U2.x1.Q1              X_U2.x1.Q2            
+MODEL        X_U2.x1.Npn1            X_U2.x1.Npn1          
+IB           7.72E-13               -5.40E-13             
+IC           5.05E-11                1.08E-12             
+VBE          2.20E-01                1.04E-07             
+VBC         -2.19E-01               -4.40E-01             
+VCE          4.40E-01                4.40E-01             
+BETADC       6.55E+01               -2.00E+00             
+GM           1.93E-09                3.87E-12             
+RPI          2.59E+10                1.03E+13             
+RX           0.00E+00                0.00E+00             
+RO           1.00E+12                1.00E+12             
+CBE          0.00E+00                0.00E+00             
+CBC          0.00E+00                0.00E+00             
+CJS          0.00E+00                0.00E+00             
+BETAAC       5.00E+01                3.97E+01             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2       3.07E+10                6.15E+07             
+
+
+
+NAME         X_U2.x1.Qcl1            X_U2.x1.Qcl3          
+MODEL        X_U2.x1.Npn1            X_U2.x1.Pnp1          
+IB           2.17E-07                2.31E-13             
+IC          -4.24E-07               -4.61E-13             
+VBE          3.58E-01                7.63E-04             
+VBC          4.37E-01                2.21E-01             
+VCE         -7.90E-02               -2.20E-01             
+BETADC      -1.95E+00               -2.00E+00             
+GM          -8.00E-06                3.75E-13             
+RPI          1.26E+08                1.82E+14             
+RX           0.00E+00                0.00E+00             
+RO           1.19E+05                1.00E+12             
+CBE          0.00E+00                0.00E+00             
+CBC          0.00E+00                0.00E+00             
+CJS          0.00E+00                0.00E+00             
+BETAAC      -1.01E+03                6.82E+01             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2      -1.27E+14                5.97E+06             
+
+
+
+NAME         X_U2.x1.Qcl2            X_U3.x1.Q1            
+MODEL        X_U2.x1.Npn1            X_U3.x1.Npn1          
+IB           5.88E-06                4.92E-22             
+IC           2.94E-04               -4.83E-22             
+VBE          6.23E-01                3.48E-10             
+VBC          0.00E+00                3.48E-10             
+VCE          6.23E-01               -4.76E-17             
+BETADC       5.00E+01               -4.83E-02             
+GM           1.14E-02               -6.06E-28             
+RPI          4.40E+03                3.61E+13             
+RX           0.00E+00                0.00E+00             
+RO           7.21E+11                7.21E+11             
+CBE          0.00E+00                0.00E+00             
+CBC          0.00E+00                0.00E+00             
+CJS          0.00E+00                0.00E+00             
+BETAAC       5.00E+01               -2.18E-14             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2       1.81E+17               -9.64E-09             
+
+
+
+NAME         X_U3.x1.Q2              X_U3.x1.Qcl           
+MODEL        X_U3.x1.Npn1            X_U3.x1.Npn1          
+IB           2.25E-28               -4.83E-22             
+IC          -4.50E-28                9.65E-22             
+VBE          1.93E-20                1.40E-19             
+VBC          4.76E-17               -3.48E-10             
+VCE         -4.76E-17                3.48E-10             
+BETADC      -4.50E-08               -9.65E-02             
+GM          -7.27E-27                5.20E-21             
+RPI          1.03E+13                3.61E+13             
+RX           0.00E+00                0.00E+00             
+RO           2.05E+11                7.21E+11             
+CBE          0.00E+00                0.00E+00             
+CBC          0.00E+00                0.00E+00             
+CJS          0.00E+00                0.00E+00             
+BETAAC      -7.47E-14                1.88E-07             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2      -1.16E-07                8.28E-02             
+
+
+
+
+**** VOLTAGE CONTROLLED SWITCHES
+
+
+NAME         X_U2.x1.Sbg             X_U3.x1.Sbg           
+MODEL        X_U2.x1.Sbg1            X_U3.x1.Sbg1          
+I LOAD      -7.40E-06                7.40E-06             
+V LOAD      -7.40E+00                7.40E+00             
+R LOAD       1.00E+06                1.00E+06             
+V CTRL       4.40E-01               -4.52E-17             
+**** 04/23/26 00:24:12 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\ENIT 1\mini projet\variateur-\variateur\alimentation.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( +VCC) 2.384E-18  ( -VCC)-575.5E-09  ($N_0001)    0.0000                       
+
+($N_0002)-45.17E-18                   ($N_0003)    0.0000                       
+
+($N_0004)-575.4E-09                   ($N_0005)    -.4397                       
+
+($N_0006) 2.384E-18                   (X_U2.x1.4)    -.2198                     
+
+(X_U2.x1.5)    -.2194                 (X_U2.x1.6)    -.4396                     
+
+(X_U2.x1.7)    -.4396                 (X_U2.x1.8)-575.5E-09                     
+
+(X_U2.x1.9)-575.5E-09                 (X_U3.x1.4) 348.1E-12                     
+
+(X_U3.x1.5) 348.1E-12                 (X_U3.x1.6) 2.404E-18                     
+
+(X_U3.x1.7) 2.385E-18                 (X_U3.x1.8) 2.384E-18                     
+
+(X_U3.x1.9) 2.384E-18                 (X_U2.x1.50)    -.4052                    
+
+(X_U2.x1.51)    -.4052                (X_U2.x1.52)     .2183                    
+
+(X_U2.x1.53)    -.1397                (X_U2.x1.54)    -.2187                    
+
+(X_U3.x1.55) 2.525E-18                (X_U3.x1.56) 2.525E-18                    
+
+(X_U2.x1.100)   -7.4000               (X_U2.x1.101)-55.71E-06                   
+
+(X_U2.x1.102)    -.4397               (X_U2.x1.105)    -.1249                   
+
+(X_U2.x1.106)    -.2198               (X_U2.x1.107)   -1.0000                   
+
+(X_U2.x1.108)     .5603               (X_U2.x1.200)  694.0000                   
+
+(X_U3.x1.100)    7.4000               (X_U3.x1.101) 7.399E-06                   
+
+(X_U3.x1.102)-45.17E-18               (X_U3.x1.105)     .0166                   
+
+(X_U3.x1.106) 348.1E-12               (X_U3.x1.107)    1.0000                   
+
+(X_U3.x1.108)   -1.0000               (X_U3.x1.200)  694.0000                   
+
+(X_U2.x1.Imon)-575.5E-09              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V8         1.411E-08
+    V_V9        -1.411E-08
+    X_U2.x1.Vbg   7.400E-06
+    X_U2.x1.Vgainf  -6.940E+02
+    X_U2.x1.Vl1  -1.259E-01
+    X_U2.x1.Vl2  -1.260E-01
+    X_U2.x1.Vmon  -8.573E-14
+    X_U2.x1.Veset  -2.067E-07
+    X_U3.x1.Vbg  -7.400E-06
+    X_U3.x1.Vgainf  -6.940E+02
+    X_U3.x1.Vl1  -6.185E+02
+    X_U3.x1.Vl2  -6.185E+02
+
+    TOTAL POWER DISSIPATION   9.65E+05  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .38
+

@@ -1,0 +1,22 @@
+* C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini projet electronique\simulation\Schematic1.sch
+
+* Schematics Version 9.2
+* Thu May 07 10:03:16 2026
+
+
+
+** Analysis setup **
+.tran 0ns .05s
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Schematic1.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

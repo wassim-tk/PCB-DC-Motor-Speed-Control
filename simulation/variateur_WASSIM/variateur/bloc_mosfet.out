@@ -1,0 +1,217 @@
+
+**** 05/09/26 21:30:55 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Sat May 09 21:28:23 2026
+
+
+
+** Analysis setup **
+.tran 0ms 50us 0ms 0.05us SKIPBP
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "bloc_mosfet.net"
+
+
+
+**** INCLUDING bloc_mosfet.net ****
+* Schematics Netlist *
+
+
+
+R_R7         $N_0002 $N_0001  10  
+R_R8         $N_0002 0  10k  
+M_M1         $N_0003 $N_0002 0 0 IRF530
+R_R9         $N_0003 V+  2  
+D_D2         $N_0003 V+ MUR820 
+V_V4         $N_0001 0  
++PULSE 0V 12V 0 10ns 10ns 50us 100us
+V_V5         V+ 0 24V
+
+**** RESUMING bloc_mosfet.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 05/09/26 21:30:55 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               MUR820          
+          IS    1.026000E-12 
+         ISR   10.290000E-09 
+         IKF     .01771      
+          RS     .03634      
+          TT  123.300000E-09 
+         CJO  367.000000E-12 
+          VJ     .75         
+           M     .4068       
+         XTI   10            
+
+
+**** 05/09/26 21:30:55 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IRF530          
+               NMOS            
+       LEVEL    3            
+           L    2.000000E-06 
+           W     .68         
+         VTO    3.191        
+          KP   20.730000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          RD     .03869      
+          RS     .05853      
+          RG    4.63         
+         RDS  444.400000E+03 
+          IS    1.861000E-12 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD    1.151000E-09 
+          CJ    0            
+        CJSW    0            
+          TT  125.000000E-09 
+        CGSO  876.700000E-12 
+        CGDO  261.400000E-12 
+        CGBO    0            
+         TOX  100.000000E-09 
+          XJ    0            
+       UCRIT   10.000000E+03 
+       DELTA    0            
+         ETA    0            
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    0            
+       XPART    0            
+
+
+**** 05/09/26 21:30:55 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V+)   24.0000  ($N_0001)    0.0000                   ($N_0002)    0.0000    
+
+($N_0003)   24.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V4         0.000E+00
+    V_V5        -5.401E-05
+
+    TOTAL POWER DISSIPATION   1.30E-03  WATTS
+
+
+**** 05/09/26 21:30:55 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini pr
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D2      
+MODEL        MUR820    
+ID          -2.15E-11 
+VD          -1.08E-04 
+REQ          5.03E+06 
+CAP          3.67E-10 
+
+
+**** MOSFETS
+
+
+NAME         M_M1      
+MODEL        IRF530    
+ID           5.40E-05 
+VGS          0.00E+00 
+VDS          2.40E+01 
+VBS          0.00E+00 
+VTH          3.19E+00 
+VDSAT        0.00E+00 
+Lin0/Sat1   -1.00E+00 
+if          -1.00E+00 
+ir          -1.00E+00 
+TAU         -1.00E+00 
+GM           0.00E+00 
+GDS          2.25E-06 
+GMB          0.00E+00 
+CBD          2.07E-10 
+CBS          9.12E-18 
+CGSOV        5.96E-10 
+CGDOV        1.78E-10 
+CGBOV        0.00E+00 
+CGS          0.00E+00 
+CGD          0.00E+00 
+CGB          4.70E-10 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .08
+

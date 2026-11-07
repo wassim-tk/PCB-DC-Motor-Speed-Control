@@ -1,0 +1,16 @@
+.ALIASES
+C_C2            C2(1=0 2=$N_0001 )
+R_R2            R2(1=0 2=$N_0002 )
+X_U6            U6(1=0 2=$N_0003 )
+X_U1            U1(GND=0 TRIGGER=$N_0004 OUTPUT=$N_0002 RESET=Vcc CONTROL=$N_0001 THRESHOLD=$N_0003 DISCHARGE=$N_0003 VCC=Vcc )
+C_C1            C1(1=0 2=$N_0003 )
+R_R1            R1(1=$N_0003 2=Vcc )
+V_V1            V1(+=Vcc -=0 )
+X_U3            U3(1=0 2=$N_0005 )
+X_U2            U2(1=$N_0005 2=$N_0004 )
+R_R3            R3(1=$N_0004 2=Vcc )
+C_C3            C3(1=$N_0004 2=$N_0006 )
+D_D1            D1(1=$N_0006 2=Vcc )
+R_R4            R4(1=$N_0006 2=Vcc )
+_    _(Vcc=Vcc)
+.ENDALIASES

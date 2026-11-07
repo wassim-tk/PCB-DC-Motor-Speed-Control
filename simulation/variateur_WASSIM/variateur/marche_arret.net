@@ -1,0 +1,38 @@
+* Schematics Netlist *
+
+
+
+D_D1         0 $N_0001 D1N4148 
+R_R2         0 $N_0001  10k  
+V_V1         VCC 0 12V
+C_C1         $N_0002 $N_0001  1u IC=0 
+D_D5         $N_0003 0 D1N4004 
+R_R4         $N_0003 $N_0004  1k  
+D_D6         0 $N_0005 D1N4148 
+R_R6         0 $N_0006  47k  
+R_R7         0 $N_0005  10k  
+C_C4         $N_0006 $N_0005  1u IC=0 
+C_C2         VCC $N_0007  1u IC=0 
+D_D7         $N_0008 $N_0009 D1N4004 
+R_R9         0 $N_0009  1k  
+D_D8         $N_0010 $N_0009 D1N4004 
+R_R11         $N_0011 $N_0010  10k  
+R_R1         0 $N_0002  47k  
+R_R3         $N_0007 0  10k  
+X_U15         $N_0012 VCC Sw_tClose PARAMS: tClose=50ms ttran=1u Rclosed=0.01
++  Ropen=1Meg
+X_U16         $N_0006 $N_0012 Sw_tOpen PARAMS: tOpen=50.05ms ttran=1u
++  Rclosed=0.01 Ropen=1Meg
+X_U5         $N_0013 VCC Sw_tClose PARAMS: tClose=150ms ttran=1u Rclosed=0.01
++  Ropen=1Meg
+X_U6         $N_0002 $N_0013 Sw_tOpen PARAMS: tOpen=150.05ms ttran=1u
++  Rclosed=0.01 Ropen=1Meg
+Q_Q1         $N_0014 $N_0011 0 Q2N2222A/ZTX 
+D_D9         $N_0014 VCC D1N4004 
+X_U1A         $N_0007 0 $N_0005 $N_0015 $N_0015 $N_0008 $N_0010 $G_CD4000_0
++  $G_CD4000_VCC CD4027A PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1B         $N_0007 0 $N_0001 VCC VCC $N_0015 $N_0004 $G_CD4000_0
++  $G_CD4000_VCC CD4027A PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+R_R16         VCC $N_0014  1k  

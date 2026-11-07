@@ -1,0 +1,169 @@
+
+**** 01/16/26 18:36:37 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\Desktop\1AGE3\S2\mini projet electronique\555 astable\astable.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Fri Jan 16 18:36:37 2026
+
+
+
+** Analysis setup **
+.tran 0.1ms 100ms SKIPBP
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "astable.net"
+
+
+
+**** INCLUDING astable.net ****
+* Schematics Netlist *
+
+
+
+X_U2         0 $N_0001 $N_0002 +5v $N_0003 $N_0001 $N_0004 +5v 555C
+V_V3         +5v 0 5v
+C_Ct         0 $N_0001  0.1u  
+R_R4         0 $N_0002  10k  
+C_C3         0 $N_0003  0.0001u  
+R_RB         $N_0001 $N_0004  100k  
+R_RA         $N_0004 +5v  1k  
+
+**** RESUMING astable.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 01/16/26 18:36:37 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\Desktop\1AGE3\S2\mini projet electronique\555 astable\astable.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.DIODE      
+          IS   10.000000E-15 
+          RS     .01         
+
+
+**** 01/16/26 18:36:37 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\Desktop\1AGE3\S2\mini projet electronique\555 astable\astable.sch
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.JNEMOD     
+               NJF             
+         VTO   -2.5          
+        BETA    5.120000E-06 
+
+
+**** 01/16/26 18:36:37 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * C:\Users\wassim Toukebri\Desktop\1AGE3\S2\mini projet electronique\555 astable\astable.sch
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.PCHAN555   X_U2.NCHAN555   
+               PMOS            NMOS            
+       LEVEL    1               1            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO    -.2              .2          
+          KP   20.000000E-06   20.000000E-06 
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA    0               0            
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO    1.000000E-12    1.000000E-12 
+        CGDO    1.000000E-12    1.000000E-12 
+        CGBO    1.000000E-12    1.000000E-12 
+         TOX    0               0            
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    0               0            
+       XPART    0               0            
+
+
+               X_U2.PCHAN555_OUT 
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    -.2          
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD  200.000000E-12 
+          CJ    0            
+        CJSW    0            
+        CGSO    1.000000E-12 
+        CGDO    1.000000E-12 
+        CGBO    1.000000E-12 
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    0            
+       XPART    0            
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .64
+

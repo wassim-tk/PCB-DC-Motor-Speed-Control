@@ -1,0 +1,21 @@
+* C:\Users\wassim Toukebri\Desktop\1AGE3\S2\mini projet electronique\555 astable\astable.sch
+
+* Schematics Version 9.2
+* Fri Jan 16 18:36:37 2026
+
+
+
+** Analysis setup **
+.tran 0.1ms 100ms SKIPBP
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "astable.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

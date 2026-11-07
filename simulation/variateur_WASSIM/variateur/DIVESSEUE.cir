@@ -1,0 +1,22 @@
+* D:\ENIT 1\mini projet\variateur-\variateur\DIVESSEUE.sch
+
+* Schematics Version 9.2
+* Sat Apr 18 13:46:26 2026
+
+
+
+** Analysis setup **
+.tran 0ns 10ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "DIVESSEUE.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

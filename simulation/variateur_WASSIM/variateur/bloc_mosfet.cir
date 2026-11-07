@@ -1,0 +1,22 @@
+* C:\Users\wassim Toukebri\OneDrive - Ministere de l'Enseignement Superieur et de la Recherche Scientifique\Desktop\1AGE3\S2\mini projet electronique\simulation\variateur_WASSIM\variateur\bloc_mosfet.sch
+
+* Schematics Version 9.2
+* Sat May 09 21:28:23 2026
+
+
+
+** Analysis setup **
+.tran 0ms 50us 0ms 0.05us SKIPBP
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "bloc_mosfet.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

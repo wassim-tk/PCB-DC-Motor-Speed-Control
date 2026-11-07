@@ -1,0 +1,24 @@
+* Schematics Netlist *
+
+
+
+D_D3         $N_0001 $N_0002 D1N4004 
+D_D1         $N_0003 $N_0002 D1N4004 
+C_C12         -VCC 0  100n  
+C_C11         0 +VCC  100n  
+D_D6         0 $N_0004 MLED81 
+C_C2         0 $N_0002  1u  
+C_C4         $N_0005 0  1u  
+X_U2         $N_0005 -VCC 0 SG7912C
+D_D4         $N_0005 $N_0001 D1N4004 
+D_D2         $N_0005 $N_0003 D1N4004 
+R_R2         +VCC $N_0006  1k  
+V_V8         0 $N_0001  
++SIN 0 12v 50Hz 0 0 0
+V_V9         $N_0003 0  
++SIN 0 12v 50Hz 0 0 0
+X_U3         $N_0002 +VCC 0 UPC7812
+D_D5         $N_0006 0 MLED81 
+R_R1         -VCC $N_0004  1k  
+C_C1         0 $N_0002  2200u  
+C_C3         $N_0005 0  2200u  

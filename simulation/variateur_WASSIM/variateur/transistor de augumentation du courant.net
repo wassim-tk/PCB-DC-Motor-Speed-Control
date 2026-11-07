@@ -1,0 +1,12 @@
+* Schematics Netlist *
+
+
+
+V_V1         +12v 0 12V
+X_U1         +12v $N_0001 Sw_tOpen PARAMS: tOpen=5ms ttran=1u Rclosed=0.01
++  Ropen=1Meg
+Q_Q1         0 $N_0001 $N_0002 BC557A 
+X_U2         0 $N_0001 Sw_tClose PARAMS: tClose=5ms ttran=1u Rclosed=0.01
++  Ropen=1Meg
+R_R1         0 $N_0002  223  
+Q_Q2         +12v $N_0001 $N_0002 BC547A 
